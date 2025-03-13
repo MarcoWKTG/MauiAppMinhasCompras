@@ -31,7 +31,7 @@ namespace MauiAppMinhasCompras.Helpers
         public Task<List<Produto>> Update(Produto p) 
         {
             //declara uma string que contém a consulta SQL para atualizar o produto
-            string sql = "UPDATE Produto SET Descrição=?, Quantidade=?, Preço=? WHERE Id=?";
+            string sql = "UPDATE Produto SET Descricao=?, Quantidade=?, Preco=? WHERE Id=?";
 
             //realiza a execução da consulta de forma assíncrona
             return _connection.QueryAsync<Produto>(
@@ -56,7 +56,7 @@ namespace MauiAppMinhasCompras.Helpers
         public Task<List<Produto>> Search(string q) 
         {
             //declaração de uma consulta SQL que busca produtos
-            string sql = "SELECT * FROM Produto WHERE descrição LIKE '%" + q +"%'";
+            string sql = "SELECT * FROM Produto WHERE descricao LIKE '%" + q +"%'";
 
             //executa a consulta e retorna uma lista de produtos
             return _connection.QueryAsync<Produto>(sql);
